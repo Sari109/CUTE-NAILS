@@ -1,112 +1,100 @@
-# Cute Nails – Aplicación Web SPA con Vue.js
+# Cute Nails
 
-**Universidad de Córdoba**  
-Facultad de Ingenierías  
-Departamento de Ingeniería de Sistemas y Telemática  
-Curso: Desarrollo de Aplicación Web Frontend  
-Entrega final: Implementación SPA con Vue.js y despliegue en producción
+Sitio web creado para Cute Nails, un negocio que ofrece servicios de manicure y pedicure a domicilio en Sahagún, Córdoba. Este proyecto se realizó como trabajo final de la asignatura Desarrollo Web I de la Universidad de Córdoba. Para su desarrollo se utilizaron Vue 3, Vite y Vue Router.
 
+**Autora:** Sara María Cárdenas Marzola
 
-## Descripción del proyecto
+**Sitio web:** https://cute-nails-olive.vercel.app
 
-Cute Nails es una aplicación web pensada para un emprendimiento de manicura, pedicura y cuidado de uñas a domicilio en el municipio de Sahagún, Córdoba.
+## Descripción
 
-En esta entrega final se migró y adaptó el proyecto realizado en los avances anteriores hacia una arquitectura basada en componentes reactivos con Vue.js 3. Con este cambio se logró una navegación rápida entre secciones sin recargar la página, una gestión de datos centralizada con persistencia en el navegador y una estructura mucho más limpia, mantenible y adaptable a cualquier pantalla.
+La página web permite que los clientes conozcan los servicios que ofrece el negocio, consulten las diferentes técnicas de uñas, comparen precios y duración, vean algunos trabajos realizados y puedan dejar sus opiniones o ponerse en contacto para solicitar una cita.
 
-Para el entorno de desarrollo y la compilación a producción se utilizó Vite, permitiendo que la aplicación sea ligera y eficiente.
+El sitio cuenta con las siguientes secciones:
 
+- **Inicio:** presenta el negocio, algunos de los servicios más destacados, cómo funciona la atención a domicilio, una galería de trabajos y preguntas frecuentes.
+- **Catálogo:** muestra las diferentes técnicas disponibles e incluye un buscador y una tabla con los precios y la duración de cada servicio.
+- **Detalle de técnica:** ofrece información más completa sobre cada técnica, incluyendo su descripción, precio, duración y algunas recomendaciones.
+- **Portafolio:** permite ver fotografías de trabajos realizados, incluyendo imágenes del antes y después de los servicios de manicure y pedicure.
+- **Reseñas:** cuenta con un formulario para que las clientas puedan compartir sus opiniones y consultar los comentarios publicados.
+- **Sobre nosotros:** presenta información general sobre el negocio.
+- **Contacto:** incluye un formulario de contacto, enlaces a WhatsApp e Instagram, horarios de atención y preguntas frecuentes.
 
+## Tecnologías utilizadas
 
----
+Para realizar el proyecto se utilizaron las siguientes herramientas:
 
-## Estructura del proyecto
+- Vue 3 para desarrollar las diferentes partes de la página.
+- Vite para crear y ejecutar el proyecto.
+- Vue Router para pasar de una sección a otra sin tener que recargar la página.
+- HTML5 y CSS3 para organizar y dar estilo al contenido.
+- JavaScript para agregar funciones e interacciones.
+- localStorage para guardar las reseñas en el navegador.
+- Fetch y async/await para trabajar con solicitudes de información.
+- Font Awesome y Google Fonts para utilizar iconos y diferentes tipos de letra.
+- Vercel para publicar la página web.
+
+## Estructura de carpetas
+
+El proyecto está organizado en diferentes carpetas para mantener los archivos ordenados y facilitar su modificación.
 
 ```text
 CUTE-NAILS/
 ├── public/
-│   ├── favicon.svg
-│   ├── icons.svg
-│   └── img/
-│       └── Fotografías y recursos visuales
+│   └── img/             Imágenes utilizadas en el sitio
 ├── src/
 │   ├── assets/
-│   │   └── styles.css
-│   ├── components/
-│   │   ├── NavBar.vue
-│   │   ├── FooterBar.vue
-│   │   ├── TarjetaServicio.vue
-│   │   ├── TarjetaResena.vue
-│   │   ├── FormularioResena.vue
-│   │   └── TablaComparativa.vue
-│   ├── Vistas/
-│   │   ├── InicioView.vue
-│   │   ├── CatalogoView.vue
-│   │   ├── DetalleView.vue
-│   │   ├── PortafolioView.vue
-│   │   ├── ResenasView.vue
-│   │   ├── NosotrosView.vue
-│   │   └── ContactoView.vue
-│   ├── enrutador/
-│   │   └── index.js
-│   ├── almacen/
-│   │   └── estado.js
-│   ├── App.vue
-│   └── main.js
+│   │   └── styles.css   Estilos de la página
+│   ├── components/      Componentes como el menú y el pie de página
+│   ├── Vistas/          Secciones principales del sitio
+│   ├── router/
+│   │   └── index.js     Configuración de las rutas
+│   ├── App.vue          Componente principal
+│   └── main.js          Archivo principal del proyecto
 ├── index.html
-├── vite.config.js
-└── package.json
+├── package.json
+└── vite.config.js
 ```
 
-La carpeta `public` contiene las imágenes, iconos y otros recursos estáticos que utiliza la página. En `src` se encuentra todo el código de la aplicación, distribuido en componentes, vistas, estilos, configuración de rutas y el almacén de datos.
+## Funcionamiento del sitio
 
-Los componentes se crearon para reutilizar elementos visuales clave en varias páginas (como las tarjetas o el formulario), mientras que las vistas corresponden a cada una de las páginas principales del sitio. El archivo `App.vue` reúne el encabezado, el contenido dinámico mediante el enrutador y el pie de página, mientras que `main.js` inicializa la aplicación en el navegador.
+El sitio está organizado de la siguiente manera:
 
----
-
-## Tecnologías utilizadas
-
-- **Vue.js 3:** Para construir la interfaz por medio de componentes de archivo único y gestionar los datos de manera reactiva.
-- **Vue Router:** Permite navegar entre todas las secciones de Cute Nails sin necesidad de recargar la página.
-- **Vite:** Herramienta utilizada para el servidor de desarrollo local y para generar el paquete final de producción.
-- **CSS3:** Hoja de estilos externa con variables, CSS Grid para las áreas principales, Flexbox para la alineación interna y reglas adaptativas para celulares, tabletas y computadores.
-- **LocalStorage:** Almacenamiento local del navegador para guardar y consultar las opiniones y calificaciones de los usuarios.
-- **Font Awesome:** Librería externa vía CDN para los iconos del menú, redes sociales y detalles de la página.
-
----
+- **Componentes:** el menú de navegación y el pie de página se crean una sola vez y se utilizan en las diferentes secciones de la página.
+- **Navegación:** cada sección tiene su propia ruta, lo que permite cambiar de una página a otra sin necesidad de recargar todo el sitio. En el caso de las técnicas, se utiliza una misma ruta que muestra la información según la opción seleccionada.
+- **Formularios:** cuentan con validaciones para comprobar que los datos ingresados sean correctos y mostrar mensajes cuando hay algún error.
+- **Guardado de reseñas:** los comentarios se almacenan en el navegador mediante localStorage, por lo que permanecen guardados incluso después de cerrar o actualizar la página.
 
 ## Instalación y ejecución del proyecto
 
-Para ejecutar Cute Nails de manera local, es necesario contar con Node.js instalado en el computador y abrir una terminal en la carpeta del proyecto.
+Para ejecutar el proyecto en un computador es necesario tener instalado Node.js.
 
-**1. Instalar las dependencias**
-bash
+1. Descargar o clonar el repositorio.
+2. Abrir una terminal dentro de la carpeta del proyecto.
+3. Escribir el siguiente comando para instalar los archivos necesarios:
+
+```bash
 npm install
-Descarga e instala las librerías necesarias para el funcionamiento del proyecto.
+```
 
-**2. Iniciar el servidor de desarrollo**
-bash
+4. Una vez terminada la instalación, iniciar el proyecto con:
+
+```bash
 npm run dev
+```
 
-Vite generará un enlace local (por ejemplo `http://localhost:5173/`) que se puede abrir en el navegador para interactuar con la página en tiempo real.
+5. Abrir en el navegador la dirección que aparece en la terminal. Generalmente es `http://localhost:5173`.
 
-**3. Generar los archivos para producción**
-bash
+Si se desea generar la versión final del proyecto, se debe ejecutar:
+
+```bash
 npm run build
+```
 
-Crea la carpeta `dist` con los archivos compilados, comprimidos y listos para subir a cualquier plataforma de alojamiento web.
+Los archivos listos para publicar se guardan en la carpeta `dist`.
 
-**4. Probar la versión de producción**
-bash
-npm run preview
+## Publicación del sitio
 
-Permite previsualizar localmente el resultado final generado en la carpeta `dist`.
+El sitio web se encuentra publicado en Vercel y está conectado al repositorio del proyecto. Esto permite que, cada vez que se realizan y suben cambios a la rama principal (`main`), la página se actualice automáticamente.
 
----
-
-## Sobre el desarrollo y cumplimiento de los requerimientos
-
-En esta última entrega, el proyecto se adaptó para trabajar con Vue.js, organizando mejor el código y separando las diferentes páginas y elementos del sitio. Se crearon componentes para reutilizar partes como las tarjetas de servicios, las reseñas y los formularios, evitando tener que repetir el mismo código en varias partes. También se implementó la forma de compartir información entre estos componentes y realizar acciones como agregar o eliminar reseñas.
-
-La navegación entre las diferentes secciones se realizó con Vue Router, permitiendo pasar de una página a otra sin tener que recargar el sitio. Además, se utilizaron las herramientas de Vue para que elementos como el buscador, los formularios y los mensajes se actualizaran según las acciones del usuario.
-
-Las reseñas y los datos de los servicios se organizaron en un archivo central, y las opiniones que agregan los usuarios se guardan en el navegador para que no se pierdan al actualizar la página. También se incluyeron validaciones en los formularios para indicar cuando falta algún dato o se ingresa información incorrecta. Por último, se preparó el proyecto para su publicación, generando una versión optimizada que permite ejecutarlo en un servidor.
+**Enlace del sitio web:** https://cute-nails-olive.vercel.app
