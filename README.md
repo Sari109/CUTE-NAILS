@@ -103,7 +103,7 @@ Permite previsualizar localmente el resultado final generado en la carpeta `dist
 
 ---
 
-## ## Sobre el desarrollo y cumplimiento de los requerimientos
+## Sobre el desarrollo y cumplimiento de los requerimientos
 
 En esta última entrega, el proyecto se adaptó para trabajar con Vue.js, organizando mejor el código y separando las diferentes páginas y elementos del sitio. Se crearon componentes para reutilizar partes como las tarjetas de servicios, las reseñas y los formularios, evitando tener que repetir el mismo código en varias partes. También se implementó la forma de compartir información entre estos componentes y realizar acciones como agregar o eliminar reseñas.
 
